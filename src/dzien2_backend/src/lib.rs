@@ -15,3 +15,10 @@ fn dodaj_wpis(wpis: String) {
         wpisy.borrow_mut().push(wpis)
     });
 }
+
+#[ic_cdk::query]
+fn odczytaj_wpisy() -> Vec<String> {
+    WPISY.with(|wpisy| {
+        wpisy.borrow().clone()
+    })
+}

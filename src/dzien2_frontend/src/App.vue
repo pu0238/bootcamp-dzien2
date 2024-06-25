@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { dzien2_backend } from 'declarations/git add ./index';
+import { dzien2_backend } from 'declarations/dzien2_backend/index';
 let greeting = ref('');
 
 async function handleSubmit(e) {

@@ -1,34 +1,12 @@
 <script setup>
-import { ref } from 'vue';
-import { dzien2_backend } from 'declarations/dzien2_backend/index';
 import Blog from './components/Blog.vue';
-
-let greeting = ref('');
-
-async function handleSubmit(e) {
-  e.preventDefault();
-  const target = e.target;
-  const name = target.querySelector('#name').value;
-  const numer = target.querySelector('#numer').value;
-  await dzien2_backend.greet(name, Number(numer)).then((response) => {
-    greeting.value = response;
-  });
-}
 </script>
 
 <template>
-  <main>
+  <main class="container mx-auto">
     <img src="/logo2.svg" alt="DFINITY logo" />
     <br />
     <br />
-    <h1 class="text-blue-600">Siema?!</h1>
-    <form action="#" @submit="handleSubmit">
-      <label for="name">Enter your name: &nbsp;</label>
-      <input id="name" alt="Name" type="text" />
-      <input id="numer" alt="Numer" type="number" />
-      <button type="submit">Click Me!</button>
-    </form>
-    <section id="greeting">{{ greeting }}</section>
     <Blog />
   </main>
 </template>

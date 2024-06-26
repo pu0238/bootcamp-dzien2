@@ -2,4 +2,6 @@ service : {
     "greet": (text, int8) -> (text) query;
     "dodaj_wpis": (text) -> ();
     "odczytaj_wpisy": () -> (vec text) query;
+    "usun_wpis": (nat64) -> ();
+    "edytuj_wpis": (nat64, text) -> ();
 }
